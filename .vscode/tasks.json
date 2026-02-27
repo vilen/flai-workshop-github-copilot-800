@@ -55,6 +55,26 @@
         "panel": "dedicated"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "React: create-react-app",
+      "type": "shell",
+      "command": "npx --yes create-react-app octofit-tracker/frontend --template cra-template --use-npm",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "React: install dependencies",
+      "type": "shell",
+      "command": "npm install bootstrap --prefix octofit-tracker/frontend && npm install react-router-dom --prefix octofit-tracker/frontend",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
     }
   ]
 }
