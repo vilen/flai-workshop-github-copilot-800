@@ -1,0 +1,80 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Init & Populate octofit_db",
+      "type": "shell",
+      "command": "bash octofit-tracker/init_db.sh",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Django: makemigrations",
+      "type": "shell",
+      "command": "source octofit-tracker/backend/venv/bin/activate && python octofit-tracker/backend/octofit_tracker/manage.py makemigrations",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Django: migrate",
+      "type": "shell",
+      "command": "source octofit-tracker/backend/venv/bin/activate && python octofit-tracker/backend/octofit_tracker/manage.py migrate",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Django: populate_db",
+      "type": "shell",
+      "command": "source octofit-tracker/backend/venv/bin/activate && python octofit-tracker/backend/octofit_tracker/manage.py populate_db",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Django: runserver",
+      "type": "shell",
+      "command": "source octofit-tracker/backend/venv/bin/activate && python octofit-tracker/backend/octofit_tracker/manage.py runserver 0.0.0.0:8000",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "React: create-react-app",
+      "type": "shell",
+      "command": "npx --yes create-react-app octofit-tracker/frontend --template cra-template --use-npm",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "React: install dependencies",
+      "type": "shell",
+      "command": "npm install bootstrap --prefix octofit-tracker/frontend && npm install react-router-dom --prefix octofit-tracker/frontend",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
